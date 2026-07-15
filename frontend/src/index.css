@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    @apply antialiased transition-colors duration-300;
+  }
+}
+
+/* Premium aesthetic styles */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl shadow-slate-100/50;
+}
+
+.dark .glass-panel {
+  @apply bg-slate-900/70 border-slate-800/50 shadow-none;
+}
+
+.glass-card {
+  @apply bg-white/40 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:shadow-lg hover:border-brand-500/30;
+}
+
+.dark .glass-card {
+  @apply bg-slate-800/30 border-slate-800/30 hover:border-brand-500/20;
+}
+
+.glow-button {
+  @apply shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all duration-200 active:translate-y-0;
+}
+
+/* Dashboard chart animations */
+.chart-container svg {
+  @apply overflow-visible;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-50 dark:bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-brand-500/50 transition-colors;
+}

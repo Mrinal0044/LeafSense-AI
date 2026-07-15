@@ -1,0 +1,80 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.db-journal
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+*.log
+
+# Node.js (Frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+dist-ssr/
+*.local
+
+# Environment Variables
+.env
+.env.production
+.env.development
+.env.staging
+.env.local
+.env.*.local
+
+# ML Models and Data (except structure)
+ml/dataset/train/*
+ml/dataset/valid/*
+ml/dataset/test/*
+!ml/dataset/train/.gitkeep
+!ml/dataset/valid/.gitkeep
+!ml/dataset/test/.gitkeep
+ml/saved_model/*
+!ml/saved_model/.gitkeep
+*.h5
+*.keras
+*.tflite
+*.pb
+
+# Virtual environments
+ml_venv/
+
+# Database files
+*.db
+*.sqlite
+leafsense_db.db
+

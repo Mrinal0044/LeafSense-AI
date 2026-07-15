@@ -1,0 +1,344 @@
+{
+  "Apple___Apple_scab": {
+    "name": "Apple Scab",
+    "scientific_name": "Venturia inaequalis",
+    "description": "Apple scab is a serious disease of apple trees that affects both leaves and fruit, leading to aesthetic and yield losses.",
+    "symptoms": "Olive-green to black velvety spots on leaves; fruit develops brown, corky lesions or cracks.",
+    "causes": "Fungal pathogen that overwinter in fallen leaves and spreads via spring rains.",
+    "treatment": "Apply fungicides like copper or sulfur sprays during early bud break.",
+    "prevention": "Rake and destroy fallen leaves in autumn; prune trees to improve air circulation; plant resistant apple cultivars."
+  },
+  "Apple___Black_rot": {
+    "name": "Apple Black Rot",
+    "scientific_name": "Botryosphaeria obtusa",
+    "description": "A fungal disease causing cankers on limbs, frogeye leaf spots, and rotting of fruit.",
+    "symptoms": "Small purple spots on leaves expanding into 'frogeye' spots; fruit rots with concentric rings and black pycnidia; bark cankers.",
+    "causes": "Fungus overwintering in dead wood, mummified fruit, and bark cankers.",
+    "treatment": "Prune out dead wood and cankers; apply appropriate fungicides from tight cluster stage through harvest.",
+    "prevention": "Remove mummified fruit from trees; destroy infected wood; maintain tree vigor with proper fertilizing."
+  },
+  "Apple___Cedar_apple_rust": {
+    "name": "Cedar Apple Rust",
+    "scientific_name": "Gymnosporangium juniperi-virginianae",
+    "description": "A heteroecious rust disease requiring both apple trees and Eastern Red Cedar hosts to complete its life cycle.",
+    "symptoms": "Bright orange-yellow spots on upper leaf surfaces; tube-like projections (aecia) on the underside of leaves and fruit.",
+    "causes": "Fungal spores blown from cedar galls to apple leaves during warm spring rains.",
+    "treatment": "Apply preventive fungicides (e.g., myclobutanil) during the pink bud stage through petal fall.",
+    "prevention": "Remove nearby cedar trees or prune cedar galls in winter; choose rust-resistant apple varieties."
+  },
+  "Apple___healthy": {
+    "name": "Healthy Apple",
+    "scientific_name": "Malus domestica",
+    "description": "The apple tree is healthy, displaying normal vigor, clean foliage, and healthy fruit growth.",
+    "symptoms": "None. Leaves are green, intact, and free from spots or discoloration.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Continue standard cultural practices, including routine pruning, watering, and soil management."
+  },
+  "Blueberry___healthy": {
+    "name": "Healthy Blueberry",
+    "scientific_name": "Vaccinium corymbosum",
+    "description": "The blueberry plant is healthy, showing bright foliage, normal growth, and healthy berry production.",
+    "symptoms": "None. Green, clean foliage with standard growth behavior.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Maintain soil pH between 4.5 and 5.0, prune annually, and apply organic mulch."
+  },
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "name": "Cherry Powdery Mildew",
+    "scientific_name": "Podosphaera clandestina",
+    "description": "A common fungal disease affecting cherries, particularly young leaves and shoots, reducing photosynthesis.",
+    "symptoms": "White, powdery fungal patches on leaves and twigs; leaves curl upwards and become distorted.",
+    "causes": "Fungus that thrives in high humidity and moderate temperatures, spreading via wind.",
+    "treatment": "Apply sulfur or potassium bicarbonate fungicides at first sign of disease.",
+    "prevention": "Prune trees to open the canopy; avoid overhead watering; remove suckers from the base."
+  },
+  "Cherry_(including_sour)___healthy": {
+    "name": "Healthy Cherry",
+    "scientific_name": "Prunus cerasus",
+    "description": "The cherry tree is healthy, showcasing clean leaves, solid structure, and healthy fruit production.",
+    "symptoms": "None. Foliage is green, glossy, and free of spots or fungal dust.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Follow annual pruning routines, apply organic compost, and monitor for pests."
+  },
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "name": "Corn Gray Leaf Spot",
+    "scientific_name": "Cercospora zeae-maydis",
+    "description": "A major fungal disease of corn causing significant foliar damage and crop yield loss in warm, humid areas.",
+    "symptoms": "Rectangular, tan-to-gray leaf spots restricted by leaf veins, resembling matches.",
+    "causes": "Fungal pathogen that overwinters in corn crop residue on the soil surface.",
+    "treatment": "Apply foliar fungicides (e.g., strobilurins or triazoles) if disease pressure is high before tasseling.",
+    "prevention": "Rotate crops with non-hosts like soybeans; practice tillage to bury residue; plant resistant corn hybrids."
+  },
+  "Corn_(maize)___Common_rust_": {
+    "name": "Corn Common Rust",
+    "scientific_name": "Puccinia sorghi",
+    "description": "A fungal rust disease that attacks corn, characterized by powdery brick-red pustules on foliage.",
+    "symptoms": "Oval, cinnamon-brown pustules on both upper and lower surfaces of leaves that erupt to release powdery spores.",
+    "causes": "Fungal spores blown north from southern overwintering areas by spring winds.",
+    "treatment": "Fungicide applications are rarely cost-effective unless severe rust occurs early on susceptible inbred lines.",
+    "prevention": "Plant resistant hybrids; manage planting dates to avoid high spore concentrations."
+  },
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "name": "Corn Northern Leaf Blight",
+    "scientific_name": "Exserohilum turcicum",
+    "description": "A destructive fungal disease of corn characterized by large, cigar-shaped lesions on leaves.",
+    "symptoms": "Long, elliptical, grayish-green or tan lesions (1-6 inches long) starting on lower leaves.",
+    "causes": "Fungus overwintering in infected corn residues, spreading via wind and water splashes.",
+    "treatment": "Fungicides can be applied if symptoms appear early and weather conditions are favorable for disease spreads.",
+    "prevention": "Rotate crops; harvest/plow under old residues; select resistant hybrids."
+  },
+  "Corn_(maize)___healthy": {
+    "name": "Healthy Corn",
+    "scientific_name": "Zea mays",
+    "description": "The corn plant is healthy, showing thick green stalks and healthy foliage free of leaf blights.",
+    "symptoms": "None. Long leaves are uniform green, without stripe lesions or rust pustules.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Follow crop rotation schedules, ensure balanced nitrogen levels, and manage soil drainage."
+  },
+  "Grape___Black_rot": {
+    "name": "Grape Black Rot",
+    "scientific_name": "Guignardia bidwellii",
+    "description": "A highly destructive grape fungal disease that destroys berries, leaves, and shoots, causing severe crop failure.",
+    "symptoms": "Reddish-brown circular spots on leaves; berries turn brown, shrivel, and transform into hard, black mummies.",
+    "causes": "Fungus overwintering in grape mummies on the vine or ground, activated by rain.",
+    "treatment": "Apply fungicides containing mancozeb, ziram, or myclobutanil starting at bud break.",
+    "prevention": "Remove all mummified fruit during winter pruning; prune shoots to keep vines off the ground; cultivate sun-exposed rows."
+  },
+  "Grape___Esca_(Black_Measles)": {
+    "name": "Grape Esca (Black Measles)",
+    "scientific_name": "Phaeomoniella chlamydospora / Phaeoacremonium aleophilum",
+    "description": "A complex wood-rot disease of grapevines causing leaf mottling, vine decline, and skin spots on berries.",
+    "symptoms": "Tiger-stripe leaf discoloration (chlorosis and necrosis); dark spots (measles) on berry skins; wood decay.",
+    "causes": "Fungi entering through pruning wounds and slowly colonizing the vascular system of the vine.",
+    "treatment": "Protect pruning wounds with sealants; remove and burn severely infected vines to protect the vineyard.",
+    "prevention": "Prune during dry winter periods; apply wound dressings; maintain good vine vigor."
+  },
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "name": "Grape Leaf Blight",
+    "scientific_name": "Pseudocercospora vitis",
+    "description": "A fungal leaf disease causing premature defoliation in late summer, weakening grapevines.",
+    "symptoms": "Dark brown, irregular spots on leaves that merge, causing leaves to dry, curl up, and fall off early.",
+    "causes": "Fungus that overwinters on fallen leaves, spreading in wet, warm summer conditions.",
+    "treatment": "Apply protective copper or organic fungicides if disease appears mid-season.",
+    "prevention": "Rake and destroy fallen leaves; prune vines to maximize sun exposure and air flow."
+  },
+  "Grape___healthy": {
+    "name": "Healthy Grape",
+    "scientific_name": "Vitis vinifera",
+    "description": "The grapevine is healthy, displaying vibrant green leaves, strong shoots, and healthy clusters of grapes.",
+    "symptoms": "None. Uniform green leaves with no necrotic borders or mummified berries.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Perform consistent canopy management, prune annually in late winter, and check soil nutrient levels."
+  },
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "name": "Citrus Greening (HLB)",
+    "scientific_name": "Candidatus Liberibacter asiaticus",
+    "description": "A devastating, incurable bacterial disease of citrus trees spread by insects, causing fruit to stay green and bitter.",
+    "symptoms": "Mottled yellow leaves; stunted tree growth; small, lopsided, bitter green fruit with dark seeds.",
+    "causes": "Bacterium transmitted by the Asian Citrus Psyllid (Diaphorina citri) insect vector.",
+    "treatment": "No cure exists. Infected trees must be removed and destroyed to prevent spreading the bacteria.",
+    "prevention": "Control psyllid populations with insecticides or natural predators; use certified disease-free nursery stock."
+  },
+  "Peach___Bacterial_spot": {
+    "name": "Peach Bacterial Spot",
+    "scientific_name": "Xanthomonas arboricola pv. pruni",
+    "description": "A bacterial disease affecting peach leaves, fruit, and twigs, resulting in defoliation and unmarketable fruit.",
+    "symptoms": "Small, water-soaked, purple-to-brown lesions on leaves that drop out, leaving a 'shot-hole' appearance; cracked fruit.",
+    "causes": "Bacterial pathogen that overwinters in twig cankers and spreads in warm, wet spring weather.",
+    "treatment": "Apply copper sprays or oxytetracycline during early spring and petal fall.",
+    "prevention": "Avoid planting susceptible cultivars; prune to facilitate rapid drying of leaves; avoid overhead irrigation."
+  },
+  "Peach___healthy": {
+    "name": "Healthy Peach",
+    "scientific_name": "Prunus persica",
+    "description": "The peach tree is healthy, displaying lush foliage, clean branches, and normal fruit development.",
+    "symptoms": "None. Smooth, green leaves without shot-holes or bacterial spots.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Apply protective sprays during dormancy, prune trees into an open center shape, and keep tree surrounds clear."
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "name": "Pepper Bacterial Spot",
+    "scientific_name": "Xanthomonas campestris pv. vesicatoria",
+    "description": "A serious bacterial disease causing leaf drop, fruit spot, and yield loss in bell peppers.",
+    "symptoms": "Small, dark, circular spots on leaves with yellow halos; raised, scab-like spots on peppers.",
+    "causes": "Bacterial pathogen carried on infected seed or surviving in crop residue, spread by rain splash.",
+    "treatment": "Spray copper-based bactericides at weekly intervals when conditions are hot and wet.",
+    "prevention": "Use certified pathogen-free seed; practice crop rotation; stay out of fields when foliage is wet."
+  },
+  "Pepper,_bell___healthy": {
+    "name": "Healthy Pepper",
+    "scientific_name": "Capsicum annuum",
+    "description": "The bell pepper plant is healthy, showing upright growth, clean leaves, and shiny green fruit.",
+    "symptoms": "None. Clear, flat green leaves without dark spots or yellowing.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Rotate pepper plantings with grass crops, apply mulch to prevent soil splashing, and irrigate at the soil level."
+  },
+  "Potato___Early_blight": {
+    "name": "Potato Early Blight",
+    "scientific_name": "Alternaria solani",
+    "description": "A fungal disease of potato leaves characterized by dark spots with concentric 'target' rings.",
+    "symptoms": "Dark brown-to-black spots on older leaves displaying concentric rings (target board pattern).",
+    "causes": "Fungal pathogen that overwinters in plant debris and soil, spreading in alternating wet and dry conditions.",
+    "treatment": "Apply fungicides (e.g., chlorothalonil or mancozeb) when early lesions appear on lower leaves.",
+    "prevention": "Rotate crops; destroy crop residues after harvest; ensure proper nitrogen levels to reduce susceptibility."
+  },
+  "Potato___Late_blight": {
+    "name": "Potato Late Blight",
+    "scientific_name": "Phytophthora infestans",
+    "description": "A destructive water-mold disease that can rapidly destroy entire potato crops in wet weather, famously causing the Irish Potato Famine.",
+    "symptoms": "Large, dark, water-soaked lesions on leaves with white mold on the underside in humid conditions; tubers rot.",
+    "causes": "Oomycete pathogen that spreads rapidly via airborne spores in cool, damp conditions.",
+    "treatment": "Apply protective fungicides (e.g., metalaxyl or copper sprays) immediately on forecast of cool, wet weather.",
+    "prevention": "Plant certified disease-free seed tubers; destroy volunteer potato plants; remove infected plants immediately."
+  },
+  "Potato___healthy": {
+    "name": "Healthy Potato",
+    "scientific_name": "Solanum tuberosum",
+    "description": "The potato plant is healthy, featuring robust leafy stems and healthy root structures.",
+    "symptoms": "None. Leaves are green, broad, and free from target spots or white mold.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Hill potatoes properly, practice 3-year crop rotations, and use drip irrigation to keep foliage dry."
+  },
+  "Raspberry___healthy": {
+    "name": "Healthy Raspberry",
+    "scientific_name": "Rubus idaeus",
+    "description": "The raspberry plant is healthy, with upright growth, dark green leaves, and clear canes.",
+    "symptoms": "None. Green serrated leaves with no rust spots or cane lesions.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Prune old fruited floricanes in autumn, maintain trellises for air flow, and mulch around the base."
+  },
+  "Soybean___healthy": {
+    "name": "Healthy Soybean",
+    "scientific_name": "Glycine max",
+    "description": "The soybean crop is healthy, with dense, clean green foliage and normal seed pod production.",
+    "symptoms": "None. Clear green trifoliate leaves without yellow margins or spots.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Optimize planting densities, rotate crops annually, and ensure proper seed inoculation."
+  },
+  "Squash___Powdery_mildew": {
+    "name": "Squash Powdery Mildew",
+    "scientific_name": "Podosphaera xanthii",
+    "description": "A fungal disease causing a powdery white coating on squash leaves, reducing photosynthesis and yield.",
+    "symptoms": "Talcur-powder-like white spots that grow to cover entire leaf surfaces, stems, and petioles; leaves turn yellow and dry.",
+    "causes": "Fungus that thrives in dry, warm conditions with high humidity, spreading via wind.",
+    "treatment": "Spray horticultural oils, neem oil, or fungicides like potassium bicarbonate at first appearance.",
+    "prevention": "Select resistant squash varieties; plant in full sun; space plants out to improve air circulation."
+  },
+  "Strawberry___Leaf_scorch": {
+    "name": "Strawberry Leaf Scorch",
+    "scientific_name": "Diplocarpon earlianum",
+    "description": "A fungal disease of strawberry leaves that causes purplish spots, leading to leaves drying and appearing scorched.",
+    "symptoms": "Numerous small, purplish spots on leaves that merge, turning the leaf tissue brown, paper-dry, and curled.",
+    "causes": "Fungal spores that overwinter on infected leaves and spread in wet conditions during spring.",
+    "treatment": "Apply fungicides during early spring growth and repeat if damp weather persists.",
+    "prevention": "Remove old leaves after harvest; keep plant rows narrow to facilitate quick drying; plant resistant varieties."
+  },
+  "Strawberry___healthy": {
+    "name": "Healthy Strawberry",
+    "scientific_name": "Fragaria × ananassa",
+    "description": "The strawberry plant is healthy, showing bright green trifoliate leaves and healthy runners.",
+    "symptoms": "None. Foliage is clean, green, and free from purple spots or margins.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Mulch with clean straw, prune runners if dense, and water at soil level."
+  },
+  "Tomato___Bacterial_spot": {
+    "name": "Tomato Bacterial Spot",
+    "scientific_name": "Xanthomonas perforans",
+    "description": "A bacterial disease causing spots on leaves, stems, and fruit, resulting in defoliation and sunburned tomato crop loss.",
+    "symptoms": "Small, dark, circular lesions with yellow halos on leaves; raised black scabs on tomato fruits.",
+    "causes": "Bacteria carried on seeds or overwintering in plant debris, spreading in warm, wet weather.",
+    "treatment": "Apply copper sprays combined with mancozeb to help manage bacterial spreads early in the season.",
+    "prevention": "Use certified disease-free seeds; avoid overhead watering; rotate crops with non-solanaceous plants."
+  },
+  "Tomato___Early_blight": {
+    "name": "Tomato Early Blight",
+    "scientific_name": "Alternaria solani",
+    "description": "A common fungal disease causing circular spots with concentric rings on older tomato leaves.",
+    "symptoms": "Dark spots with concentric target-like rings on lower leaves; leaves turn yellow and drop off.",
+    "causes": "Fungal pathogen overwintering in crop residues and soil, splashing up onto leaves during rain.",
+    "treatment": "Apply copper or chlorothalonil fungicides at the first sign of symptoms.",
+    "prevention": "Prune lower leaves to prevent contact with soil; apply thick organic mulch; practice crop rotations."
+  },
+  "Tomato___Late_blight": {
+    "name": "Tomato Late Blight",
+    "scientific_name": "Phytophthora infestans",
+    "description": "A highly destructive water-mold disease that can defoliate tomato plants and rot fruit in cool, damp weather.",
+    "symptoms": "Large, dark gray-green spots on leaves that turn black; white fuzzy mold on leaf undersides in wet weather; large brown patches on fruit.",
+    "causes": "Airborne spores of an oomycete pathogen that thrives in cool, wet environments.",
+    "treatment": "Apply preventative fungicides immediately when weather conditions turn wet and cool; remove infected plants.",
+    "prevention": "Ensure wide spacing for air flow; avoid watering leaves; select late-blight resistant tomato cultivars."
+  },
+  "Tomato___Leaf_Mold": {
+    "name": "Tomato Leaf Mold",
+    "scientific_name": "Passalora fulva",
+    "description": "A fungal leaf disease common in greenhouse tomatoes, causing leaf yellowing and defoliation under high humidity.",
+    "symptoms": "Pale green or yellow spots on upper leaf surfaces; olive-green velvety fungal growth on the leaf underside.",
+    "causes": "Fungus that thrives in warm, highly humid (relative humidity > 85%) greenhouse environments.",
+    "treatment": "Apply sulfur or copper fungicides; increase ventilation in greenhouses.",
+    "prevention": "Maintain greenhouse humidity below 85%; prune lower leaves to increase air flow; water early in the day."
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "name": "Tomato Septoria Leaf Spot",
+    "scientific_name": "Septoria lycopersici",
+    "description": "A very common fungal leaf spot disease of tomatoes, starting on lower leaves and moving upwards.",
+    "symptoms": "Numerous small, circular spots with dark borders and tan-to-gray centers containing tiny black dots (fruiting bodies).",
+    "causes": "Fungus that survives in crop debris and weeds, spreading via splashing water from rain or hose.",
+    "treatment": "Apply protective fungicides regularly during wet weather; prune lower foliage.",
+    "prevention": "Mulch the soil; rotate crops; clear out tomato vines at the end of the season; avoid overhead watering."
+  },
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "name": "Tomato Spider Mites",
+    "scientific_name": "Tetranychus urticae",
+    "description": "Tiny arachnid pests that feed on plant leaf sap, causing speckling, yellowing, and leaf death in hot, dry conditions.",
+    "symptoms": "Fine yellow speckling on leaves; fine webbing on the undersides of leaves and growing tips; leaves turn bronze and dry.",
+    "causes": "Pest outbreak promoted by hot, dusty, dry conditions that reduce natural predators.",
+    "treatment": "Apply insecticidal soaps, neem oil, or miticides; blast plants with water to dislodge mites.",
+    "prevention": "Keep plants well-watered; spray down paths to reduce dust; encourage beneficial insects like ladybugs."
+  },
+  "Tomato___Target_Spot": {
+    "name": "Tomato Target Spot",
+    "scientific_name": "Corynespora cassiicola",
+    "description": "A fungal disease affecting tomato leaves, stems, and fruit, resembling early blight but with smaller lesions.",
+    "symptoms": "Small, circular spots with light brown centers and dark rings (target shape); fruit develops sunken, circular lesions.",
+    "causes": "Fungus that overwinters in plant debris and grows in warm, humid weather.",
+    "treatment": "Apply copper-based or systemic fungicides early when symptoms appear.",
+    "prevention": "Remove crop residue; ensure adequate plant spacing; avoid overhead irrigation."
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "name": "Tomato Yellow Leaf Curl",
+    "scientific_name": "Begomovirus (TYLCV)",
+    "description": "A destructive viral disease causing leaf curling, stunting, and complete failure to produce fruit.",
+    "symptoms": "Severe stunting of the plant; leaves curl upward and inward, developing yellow margins and smaller leaf sizes.",
+    "causes": "Viral pathogen transmitted by the silverleaf whitefly (Bemisia tabaci) insect vector.",
+    "treatment": "No chemical treatment is available. Remove and destroy infected plants immediately.",
+    "prevention": "Use whitefly-proof netting; apply insecticides or organic treatments to control whiteflies; grow resistant varieties."
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "name": "Tomato Mosaic Virus",
+    "scientific_name": "Tobamovirus (ToMV)",
+    "description": "A highly infectious virus that mottles leaves and stunts growth, easily spread mechanically by hands and tools.",
+    "symptoms": "Mottling of leaves with alternating light and dark green areas (mosaic pattern); leaf distortion (shoestring leaves); fruit discoloration.",
+    "causes": "Highly stable virus spread by mechanical contact, contaminated tools, seeds, or hands (especially smokers due to tobacco virus ties).",
+    "treatment": "No cure. Remove and burn infected plants. Wash hands and sterilize tools in non-fat dry milk solution.",
+    "prevention": "Buy certified virus-free seeds; sanitize pruning shears between plants; avoid handling plants after using tobacco."
+  },
+  "Tomato___healthy": {
+    "name": "Healthy Tomato",
+    "scientific_name": "Solanum lycopersicum",
+    "description": "The tomato plant is healthy, showing bright green foliage, robust stems, and clean, glossy fruit.",
+    "symptoms": "None. Green, flat leaves with no spots, curls, or fuzzy mold.",
+    "causes": "N/A",
+    "treatment": "N/A",
+    "prevention": "Provide support (cages or stakes), water consistently at the base, and prune suckers to promote air circulation."
+  }
+}
