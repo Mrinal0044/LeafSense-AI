@@ -55,9 +55,12 @@ class Settings(BaseSettings):
         port = data.get("DB_PORT")
         name = data.get("DB_NAME")
         
-        # If any core parameter is missing, fallback to SQLite for easy local dev
+        # Enforce PostgreSQL configuration
         if not all([user, password, host, name]):
-            return "sqlite:///./leafsense_db.db"
+            raise ValueError(
+                "Database credentials (DB_USER, DB_PASSWORD, DB_HOST, DB_NAME) "
+                "or DATABASE_URL must be provided."
+            )
             
         return f"postgresql://{user}:{password}@{host}:{port}/{name}"
 

@@ -1,3 +1,19 @@
+import bcrypt
+# Monkeypatch to bypass passlib AttributeError: module 'bcrypt' has no attribute '__about__'
+if not hasattr(bcrypt, "__about__") or not hasattr(bcrypt.__about__, "__version__"):
+    class About:
+        __version__ = getattr(bcrypt, "__version__", "4.0.0")
+    bcrypt.__about__ = About()
+
+# Monkeypatch bcrypt.hashpw to truncate password to 72 bytes to satisfy passlib checks
+_original_hashpw = bcrypt.hashpw
+def _patched_hashpw(password, salt):
+    pwd_bytes = password.encode("utf-8") if isinstance(password, str) else password
+    if len(pwd_bytes) > 72:
+        pwd_bytes = pwd_bytes[:72]
+    return _original_hashpw(pwd_bytes, salt)
+bcrypt.hashpw = _patched_hashpw
+
 from datetime import datetime, timedelta, timezone
 from typing import Any, Union
 from jose import jwt

@@ -8,6 +8,9 @@ from sqlalchemy.orm import sessionmaker
 # Append backend folder to PYTHONPATH to allow imports during pytest running
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Set testing environment before importing app to avoid actual DB connections
+os.environ["ENVIRONMENT"] = "testing"
+
 from app.main import app
 from app.database.session import get_db
 from app.database.base_class import Base

@@ -52,8 +52,11 @@ def startup_event():
     """
     Application startup sequence: creates tables and loads model into memory.
     """
-    logger.info("Initializing database and metadata tables...")
-    Base.metadata.create_all(bind=engine)
+    if settings.ENVIRONMENT != "testing":
+        logger.info("Initializing database and metadata tables...")
+        Base.metadata.create_all(bind=engine)
+    else:
+        logger.info("Bypassing database initialization in testing environment.")
     
     logger.info("Caching ML models and indices resources in memory...")
     try:
