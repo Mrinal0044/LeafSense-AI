@@ -44,17 +44,36 @@ app.add_middleware(
 os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
 app.mount("/uploads", StaticFiles(directory=settings.UPLOAD_DIR), name="uploads")
 
+from alembic.config import Config
+from alembic import command
+
 # Include master API router
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+def run_db_migrations():
+    """
+    Apply database schema migrations programmatically on startup.
+    Falls back to Base.metadata.create_all if migration run fails.
+    """
+    try:
+        logger.info("Running database migrations programmatically...")
+        # Get path to alembic.ini relative to this file
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        alembic_ini_path = os.path.join(base_dir, "alembic.ini")
+        alembic_cfg = Config(alembic_ini_path)
+        command.upgrade(alembic_cfg, "head")
+        logger.info("Database migrations applied successfully.")
+    except Exception as e:
+        logger.error(f"Programmatic migrations failed: {e}. Falling back to metadata table creation.")
+        Base.metadata.create_all(bind=engine)
 
 @app.on_event("startup")
 def startup_event():
     """
-    Application startup sequence: creates tables and loads model into memory.
+    Application startup sequence: runs database migrations and loads model resources.
     """
     if settings.ENVIRONMENT != "testing":
-        logger.info("Initializing database and metadata tables...")
-        Base.metadata.create_all(bind=engine)
+        run_db_migrations()
     else:
         logger.info("Bypassing database initialization in testing environment.")
     
