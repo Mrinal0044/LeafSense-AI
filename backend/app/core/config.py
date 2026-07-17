@@ -1,6 +1,6 @@
 import os
 from typing import List, Union
-from pydantic import AnyHttpUrl, field_validator
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
@@ -30,6 +30,19 @@ class Settings(BaseSettings):
 
     # JWT Configs
     JWT_SECRET: str = "db5a9ef22e86bfd7b5bf3b8cd09641ab3e46c72e2d9cd7de28e67a7d42cf3891"
+
+    @field_validator("JWT_SECRET", mode="after")
+    @classmethod
+    def check_jwt_secret_in_production(cls, v: str, info) -> str:
+        env = info.data.get("ENVIRONMENT", "development")
+        default_secret = "db5a9ef22e86bfd7b5bf3b8cd09641ab3e46c72e2d9cd7de28e67a7d42cf3891"
+        if env == "production" and v == default_secret:
+            raise ValueError(
+                "Security Risk: Default JWT_SECRET cannot be used in production environment! "
+                "Configure a secure random secret via the JWT_SECRET environment variable."
+            )
+        return v
+
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24 hours
     

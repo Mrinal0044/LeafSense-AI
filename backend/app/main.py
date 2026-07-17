@@ -53,15 +53,32 @@ app.include_router(api_router, prefix=settings.API_V1_STR)
 def run_db_migrations():
     """
     Apply database schema migrations programmatically on startup.
-    Falls back to Base.metadata.create_all if migration run fails.
+    Ensures existing databases continue working by checking for unstamped tables.
+    Falls back to Base.metadata.create_all if alembic is unconfigured.
     """
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    alembic_ini_path = os.path.join(base_dir, "alembic.ini")
+    
+    if not os.path.exists(alembic_ini_path):
+        logger.warning("alembic.ini not found. Falling back to metadata table creation.")
+        Base.metadata.create_all(bind=engine)
+        return
+        
     try:
         logger.info("Running database migrations programmatically...")
-        # Get path to alembic.ini relative to this file
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        alembic_ini_path = os.path.join(base_dir, "alembic.ini")
         alembic_cfg = Config(alembic_ini_path)
-        command.upgrade(alembic_cfg, "head")
+        
+        # Prevent table recreation conflicts on existing databases
+        from sqlalchemy import inspect
+        inspector = inspect(engine)
+        tables = inspector.get_table_names()
+        
+        if "user" in tables and "alembic_version" not in tables:
+            logger.info("Database tables already exist but are unstamped. Stamping version to head...")
+            command.stamp(alembic_cfg, "head")
+        else:
+            command.upgrade(alembic_cfg, "head")
+            
         logger.info("Database migrations applied successfully.")
     except Exception as e:
         logger.error(f"Programmatic migrations failed: {e}. Falling back to metadata table creation.")

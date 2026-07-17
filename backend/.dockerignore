@@ -1,0 +1,30 @@
+# Build artifacts and caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.vscode/
+.idea/
+*.log
+
+# Git files
+.git
+.gitignore
+
+# Environment configurations
+.env
+.env.*
+!.env.example
+
+# Local storage and test virtual environments
+uploads/
+backend/uploads/
+venv/
+.venv/
+ml_venv/
+
+# Database files
+*.db
+*.sqlite
+leafsense_db.db

@@ -78,3 +78,14 @@ ml_venv/
 *.sqlite
 leafsense_db.db
 
+# Test caches
+.pytest_cache/
+
+# Local upload files
+uploads/
+backend/uploads/
+
+# Environment files
+.env.*
+!.env.example
+
