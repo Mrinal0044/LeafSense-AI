@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1
 # Install system dependencies for OpenCV and NumPy
 RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
-    libgl1-mesa-glx \
+    libgl1 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -20,6 +20,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy backend app source code
 COPY backend/app /app/app
+
+# Copy alembic migrations configuration and revisions
+COPY backend/alembic.ini /app/alembic.ini
+COPY backend/alembic /app/alembic
 
 # Copy model weights from ML pipeline into path matching config settings
 COPY ml/saved_model /ml/saved_model
