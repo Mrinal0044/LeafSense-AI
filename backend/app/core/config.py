@@ -68,14 +68,14 @@ class Settings(BaseSettings):
         port = data.get("DB_PORT")
         name = data.get("DB_NAME")
         
-        # Enforce PostgreSQL configuration
-        if not all([user, password, host, name]):
+        # Enforce PostgreSQL configuration parameters are defined
+        if user is None or password is None or host is None or name is None:
             raise ValueError(
                 "Database credentials (DB_USER, DB_PASSWORD, DB_HOST, DB_NAME) "
                 "or DATABASE_URL must be provided."
             )
             
-        return f"postgresql://{user}:{password}@{host}:{port}/{name}"
+        return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{name}"
 
     # ML Model Configs
     MODEL_PATH: str = os.path.join(
