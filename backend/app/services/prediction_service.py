@@ -11,9 +11,11 @@ from app.schemas.prediction import PredictionDetailResponse, DiseaseDetails
 
 # Setup logger
 logger = logging.getLogger("prediction_service")
+logger.setLevel(logging.INFO)
 
 # Try to import TF/OpenCV inside singleton to handle environments gracefully
 try:
+    # pyrefly: ignore [missing-import]
     import cv2
     import numpy as np
     import tensorflow as tf
@@ -32,6 +34,7 @@ class PredictionModelSingleton:
         """
         Load Keras model and indices dictionaries once into class parameters.
         """
+        import time
         if not HAS_ML_LIBS:
             # Fallback mock setup if ML libs are not present
             cls._class_indices = {str(i): f"Mock_Class_{i}" for i in range(38)}
@@ -42,17 +45,26 @@ class PredictionModelSingleton:
             return
 
         if cls._model is None:
-            logger.info("In-memory loading of TensorFlow model and classification indices...")
+            start_time = time.time()
+            logger.info("Loading TensorFlow model...")
+            logger.info(f"Model path: {settings.MODEL_PATH}")
             if not os.path.exists(settings.MODEL_PATH):
                 raise FileNotFoundError(f"Model weights file not found at: {settings.MODEL_PATH}. Run training first.")
             cls._model = tf.keras.models.load_model(settings.MODEL_PATH)
+            logger.info("TensorFlow model loaded")
             
+            logger.info("Loading class_indices.json")
             with open(settings.CLASS_INDICES_PATH, "r") as f:
                 cls._class_indices = json.load(f)
+            logger.info("class_indices loaded")
                 
+            logger.info("Loading disease_info.json")
             with open(settings.DISEASE_INFO_PATH, "r") as f:
                 cls._disease_database = json.load(f)
-            logger.info("TensorFlow resources loaded successfully.")
+            logger.info("Disease database loaded")
+            
+            duration = time.time() - start_time
+            logger.info(f"Prediction resources ready (took {duration:.2f} seconds)")
 
     @classmethod
     def predict_image(cls, image_bytes: bytes) -> dict:

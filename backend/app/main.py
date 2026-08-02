@@ -23,6 +23,7 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger("leafsense_api")
+logger.setLevel(logging.INFO)
 
 # Initialize FastAPI application
 app = FastAPI(
@@ -56,49 +57,72 @@ def run_db_migrations():
     Ensures existing databases continue working by checking for unstamped tables.
     Falls back to Base.metadata.create_all if alembic is unconfigured.
     """
+    logger.info("Starting run_db_migrations")
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     alembic_ini_path = os.path.join(base_dir, "alembic.ini")
     
     if not os.path.exists(alembic_ini_path):
         logger.warning("alembic.ini not found. Falling back to metadata table creation.")
-        Base.metadata.create_all(bind=engine)
+        try:
+            Base.metadata.create_all(bind=engine)
+            logger.info("Database tables created via Base.metadata.create_all")
+        except Exception as e:
+            logger.error(f"Fallback table creation failed: {e}")
         return
         
     try:
-        logger.info("Running database migrations programmatically...")
+        logger.info("Loading alembic config")
         alembic_cfg = Config(alembic_ini_path)
         
-        # Prevent table recreation conflicts on existing databases
+        logger.info("Creating SQLAlchemy inspector")
         from sqlalchemy import inspect
-        inspector = inspect(engine)
-        tables = inspector.get_table_names()
+        with engine.connect() as conn:
+            logger.info("Fetching database tables")
+            tables = inspect(conn).get_table_names()
+            logger.info(f"Existing tables: {tables}")
+            
+        logger.info("Disposing engine pool before Alembic runs")
+        engine.dispose()
         
+        logger.info("Checking alembic_version table")
         if "user" in tables and "alembic_version" not in tables:
             logger.info("Database tables already exist but are unstamped. Stamping version to head...")
             command.stamp(alembic_cfg, "head")
+            logger.info("Alembic stamp finished")
         else:
+            logger.info("Running alembic upgrade")
             command.upgrade(alembic_cfg, "head")
+            logger.info("Alembic upgrade finished")
             
-        logger.info("Database migrations applied successfully.")
+        logger.info("Database migrations applied successfully")
     except Exception as e:
         logger.error(f"Programmatic migrations failed: {e}. Falling back to metadata table creation.")
-        Base.metadata.create_all(bind=engine)
+        try:
+            Base.metadata.create_all(bind=engine)
+            logger.info("Database tables created via Base.metadata.create_all fallback")
+        except Exception as fallback_err:
+            logger.error(f"Fallback metadata table creation failed: {fallback_err}")
 
 @app.on_event("startup")
 def startup_event():
     """
     Application startup sequence: runs database migrations and loads model resources.
     """
+    logger.info("=== Startup Begin ===")
     if settings.ENVIRONMENT != "testing":
         run_db_migrations()
+        logger.info("Database initialization completed")
     else:
         logger.info("Bypassing database initialization in testing environment.")
     
     logger.info("Caching ML models and indices resources in memory...")
     try:
         PredictionModelSingleton.load_resources()
+        logger.info("Model initialization completed")
     except Exception as e:
         logger.error(f"Error loading model resources at startup: {e}")
+        
+    logger.info("=== Startup Finished ===")
 
 # Global Exception Handlers for clean API reports
 @app.exception_handler(Exception)
