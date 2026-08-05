@@ -1,13 +1,13 @@
-# 🌿 LeafSense AI – AWS Based AI-Powered Plant Health Management Platform
+# LeafSense AI – AWS Based AI-Powered Plant Health Management Platform
 
 LeafSense AI is a production-ready, AI-powered plant disease detection platform that identifies plant health conditions from uploaded leaf images using **EfficientNetB0 Transfer Learning**. The application provides disease diagnosis, scientific names, treatment recommendations, preventive measures, prediction history, and dashboard analytics through a secure cloud-hosted architecture.
 
-🎥 **Project Demo:**  
+**Project Demo:**
 https://drive.google.com/file/d/1ardyiYpifhE5sTVY96kd3ORLRYe3Mh8d/view?usp=sharing
 
 ---
 
-# 📸 Project Preview
+## Project Preview
 
 | Landing Page | Prediction Dashboard |
 |--------------|----------------------|
@@ -19,25 +19,25 @@ https://drive.google.com/file/d/1ardyiYpifhE5sTVY96kd3ORLRYe3Mh8d/view?usp=shari
 
 ---
 
-# 🚀 Features
+## Features
 
-- 🌱 AI-powered plant disease detection
-- 🧠 EfficientNetB0 Transfer Learning model
-- 📊 Supports **38 crop disease classes**
-- 🔐 Secure JWT (OAuth2) Authentication
-- 👤 User Registration & Login
-- 📈 Dashboard Analytics
-- 📝 Prediction History
-- 🔬 Scientific Name Identification
-- 💊 Disease Treatment Suggestions
-- 🛡 Prevention Recommendations
-- 📄 Interactive Swagger API Documentation
-- 🐳 Dockerized Full Stack Application
-- ☁️ AWS Cloud Deployment
+- AI-powered plant disease detection
+- EfficientNetB0 transfer learning model
+- Supports 38 crop disease classes
+- Secure JWT (OAuth2) authentication
+- User registration and login
+- Dashboard analytics
+- Prediction history
+- Scientific name identification
+- Disease treatment suggestions
+- Prevention recommendations
+- Interactive Swagger API documentation
+- Dockerized full-stack application
+- AWS cloud deployment
 
 ---
 
-# 🏗 Architecture
+## Architecture
 
 ```text
                     React (Vite)
@@ -57,7 +57,7 @@ https://drive.google.com/file/d/1ardyiYpifhE5sTVY96kd3ORLRYe3Mh8d/view?usp=shari
 
 ---
 
-# ☁️ AWS Deployment Architecture
+## AWS Deployment Architecture
 
 ```text
                 Internet
@@ -77,7 +77,7 @@ https://drive.google.com/file/d/1ardyiYpifhE5sTVY96kd3ORLRYe3Mh8d/view?usp=shari
 
 ---
 
-# 🤖 Machine Learning
+## Machine Learning
 
 ### Model
 
@@ -89,10 +89,12 @@ PlantVillage Dataset
 
 ### Dataset Statistics
 
-- Training Images: **37,997**
-- Validation Images: **10,859**
-- Total Images: **48,856+**
-- Disease Classes: **38**
+| Metric | Value |
+|--------|------:|
+| Training Images | 37,997 |
+| Validation Images | 10,859 |
+| Total Images | 48,856+ |
+| Disease Classes | 38 |
 
 ### Performance
 
@@ -102,18 +104,18 @@ PlantVillage Dataset
 
 The model predicts:
 
-- Disease Name
-- Scientific Name
-- Confidence Score
-- Plant Health Status
-- Disease Description
+- Disease name
+- Scientific name
+- Confidence score
+- Plant health status
+- Disease description
 - Symptoms
 - Treatment
 - Prevention
 
 ---
 
-# 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technologies |
 |-------|--------------|
@@ -127,7 +129,7 @@ The model predicts:
 
 ---
 
-# 📁 Project Structure
+## Project Structure
 
 ```text
 LeafSense-AI/
@@ -168,18 +170,16 @@ LeafSense-AI/
 
 ---
 
-# 🔥 REST APIs
+## REST APIs
 
-## Authentication
+### Authentication
 
 | Method | Endpoint |
 |---------|----------|
 | POST | `/api/auth/register` |
 | POST | `/api/auth/login` |
 
----
-
-## Predictions
+### Predictions
 
 | Method | Endpoint |
 |---------|----------|
@@ -187,17 +187,13 @@ LeafSense-AI/
 | GET | `/api/predictions/history` |
 | DELETE | `/api/predictions/history/{id}` |
 
----
-
-## Dashboard
+### Dashboard
 
 | Method | Endpoint |
 |---------|----------|
 | GET | `/api/dashboard/stats` |
 
----
-
-## Profile
+### Profile
 
 | Method | Endpoint |
 |---------|----------|
@@ -206,66 +202,58 @@ LeafSense-AI/
 
 ---
 
-# 🔐 Authentication
+## Authentication
 
 LeafSense AI secures protected APIs using:
 
-- JWT Authentication
-- OAuth2 Password Flow
-- Bearer Tokens
-- Password Hashing using Passlib
+- JWT authentication
+- OAuth2 password flow
+- Bearer tokens
+- Password hashing using Passlib
 
 Protected endpoints include:
 
 - Predictions
 - Dashboard
-- Prediction History
-- User Profile
+- Prediction history
+- User profile
 
 ---
 
-# 🐳 Local Deployment
+## Local Deployment
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/<your-username>/LeafSense-AI.git
 cd LeafSense-AI
 ```
 
----
-
-## Start Containers
+### Start Containers
 
 ```bash
 docker compose up --build -d
 ```
 
----
-
-## View Running Containers
+### View Running Containers
 
 ```bash
 docker compose ps
 ```
 
----
-
-## Backend
+### Backend
 
 ```
 http://localhost:8000
 ```
 
-Swagger Documentation
+Swagger documentation:
 
 ```
 http://localhost:8000/docs
 ```
 
----
-
-## Frontend
+### Frontend
 
 ```
 http://localhost
@@ -273,7 +261,7 @@ http://localhost
 
 ---
 
-# ☁️ Production Deployment
+## Production Deployment
 
 The application is deployed on AWS using:
 
@@ -285,19 +273,19 @@ The application is deployed on AWS using:
 
 ---
 
-# 📊 Dashboard Analytics
+## Dashboard Analytics
 
 The analytics dashboard provides:
 
-- Total Predictions
-- Healthy vs Diseased Plants
-- Confidence Distribution
-- Most Common Diseases
-- Recent Prediction History
+- Total predictions
+- Healthy vs. diseased plants
+- Confidence distribution
+- Most common diseases
+- Recent prediction history
 
 ---
 
-# 🌱 Prediction Workflow
+## Prediction Workflow
 
 ```text
 User Uploads Leaf Image
@@ -326,21 +314,29 @@ Prediction Returned to Frontend
 
 ---
 
-# 📈 Project Highlights
+## Project Highlights
 
-- ✅ Built an EfficientNetB0 Transfer Learning model
-- ✅ 98.74% Validation Accuracy
-- ✅ 38 Crop Disease Categories
-- ✅ 48,856+ Images Used for Training & Validation
-- ✅ JWT Authentication
-- ✅ RESTful FastAPI Backend
-- ✅ React Frontend
-- ✅ PostgreSQL Database
-- ✅ Amazon RDS Integration
-- ✅ AWS EC2 Deployment
-- ✅ Dockerized Full Stack Architecture
-- ✅ Prediction History Tracking
-- ✅ Dashboard Analytics
-- ✅ Swagger/OpenAPI Documentation
+- Built an EfficientNetB0 transfer learning model
+- 98.74% validation accuracy
+- 38 crop disease categories
+- 48,856+ images used for training and validation
+- JWT authentication
+- RESTful FastAPI backend
+- React frontend
+- PostgreSQL database
+- Amazon RDS integration
+- AWS EC2 deployment
+- Dockerized full-stack architecture
+- Prediction history tracking
+- Dashboard analytics
+- Swagger/OpenAPI documentation
 
 ---
+
+## Author
+
+**Mrinal**
+
+GitHub: https://github.com/Mrinal0044
+
+LinkedIn: *(Add your LinkedIn URL here)*
