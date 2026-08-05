@@ -331,12 +331,4 @@ Prediction Returned to Frontend
 - Dashboard analytics
 - Swagger/OpenAPI documentation
 
----
 
-## Author
-
-**Mrinal**
-
-GitHub: https://github.com/Mrinal0044
-
-LinkedIn: *(Add your LinkedIn URL here)*
