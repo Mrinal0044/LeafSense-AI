@@ -7,18 +7,6 @@ https://drive.google.com/file/d/1ardyiYpifhE5sTVY96kd3ORLRYe3Mh8d/view?usp=shari
 
 ---
 
-## Project Preview
-
-| Landing Page | Prediction Dashboard |
-|--------------|----------------------|
-| *(Add Screenshot)* | *(Add Screenshot)* |
-
-| Swagger API | Disease Prediction |
-|--------------|--------------------|
-| *(Add Screenshot)* | *(Add Screenshot)* |
-
----
-
 ## Features
 
 - AI-powered plant disease detection
