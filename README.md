@@ -1,4 +1,4 @@
-# 🌿 LeafSense AI – AI-Powered Plant Health Management Platform
+# 🌿 LeafSense AI – AWS Based AI-Powered Plant Health Management Platform
 
 LeafSense AI is a production-ready, AI-powered plant disease detection platform that identifies plant health conditions from uploaded leaf images using **EfficientNetB0 Transfer Learning**. The application provides disease diagnosis, scientific names, treatment recommendations, preventive measures, prediction history, and dashboard analytics through a secure cloud-hosted architecture.
 
