@@ -1,148 +1,354 @@
-# LeafSense AI – Plant Health Management Platform
+# 🌿 LeafSense AI – AI-Powered Plant Health Management Platform
 
-LeafSense AI is an enterprise-grade, AI-powered plant health management platform designed to detect plant diseases from uploaded leaf images using transfer learning techniques with deep convolutional neural networks.
+LeafSense AI is a production-ready, AI-powered plant disease detection platform that identifies plant health conditions from uploaded leaf images using **EfficientNetB0 Transfer Learning**. The application provides disease diagnosis, scientific names, treatment recommendations, preventive measures, prediction history, and dashboard analytics through a secure cloud-hosted architecture.
+
+🎥 **Project Demo:**  
+https://drive.google.com/file/d/1ardyiYpifhE5sTVY96kd3ORLRYe3Mh8d/view?usp=sharing
 
 ---
 
-## 🏗️ Architecture Overview
+# 📸 Project Preview
 
-The application utilizes a modular, decoupled architecture consisting of:
-1. **Frontend**: A highly responsive single page React application built on Vite and styled using Tailwind CSS, showcasing interactive metrics and predictive analysis components.
-2. **Backend**: A high-performance FastAPI service implementing JWT authentication, database connections using SQLAlchemy (PostgreSQL), and endpoint services.
-3. **Machine Learning**: An image classification pipeline implementing Transfer Learning via EfficientNetB0, yielding model assets for automated disease detection.
-4. **Database & Infrastructure**: PostgreSQL running inside Docker (development) transitioning to AWS RDS (production), with pgAdmin for local administration.
+| Landing Page | Prediction Dashboard |
+|--------------|----------------------|
+| *(Add Screenshot)* | *(Add Screenshot)* |
 
-```mermaid
-graph TD
-    Client[React Frontend / Vite] -->|HTTPS Request| FastAPI[FastAPI Backend Server]
-    FastAPI -->|Queries / Mutations| PostgreSQL[(PostgreSQL Database)]
-    FastAPI -->|Inference Query| MLEngine[EfficientNetB0 Model]
-    MLEngine -->|Inference Result| FastAPI
-    pgAdmin[pgAdmin Container] -->|Manage| PostgreSQL
+| Swagger API | Disease Prediction |
+|--------------|--------------------|
+| *(Add Screenshot)* | *(Add Screenshot)* |
+
+---
+
+# 🚀 Features
+
+- 🌱 AI-powered plant disease detection
+- 🧠 EfficientNetB0 Transfer Learning model
+- 📊 Supports **38 crop disease classes**
+- 🔐 Secure JWT (OAuth2) Authentication
+- 👤 User Registration & Login
+- 📈 Dashboard Analytics
+- 📝 Prediction History
+- 🔬 Scientific Name Identification
+- 💊 Disease Treatment Suggestions
+- 🛡 Prevention Recommendations
+- 📄 Interactive Swagger API Documentation
+- 🐳 Dockerized Full Stack Application
+- ☁️ AWS Cloud Deployment
+
+---
+
+# 🏗 Architecture
+
+```text
+                    React (Vite)
+                           │
+                           │ REST API
+                           ▼
+                  FastAPI Backend
+          ┌──────────┴──────────┐
+          │                     │
+          ▼                     ▼
+ EfficientNetB0 Model     Amazon RDS PostgreSQL
+          │                     │
+          └──────────┬──────────┘
+                     ▼
+               Prediction Results
 ```
 
 ---
 
-## 🛠️ Technology Stack
+# ☁️ AWS Deployment Architecture
 
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | React, Vite, Tailwind CSS, React Router, Axios, Recharts |
-| **Backend** | FastAPI, SQLAlchemy (v2.0), Alembic, Pydantic (v2.0), JWT Authentication, Passlib |
-| **Machine Learning** | TensorFlow (Transfer Learning), OpenCV, NumPy, Scikit-learn, Matplotlib |
-| **Database** | PostgreSQL (Docker for Local Dev, Amazon RDS for Production) |
-| **Containerization** | Docker, Docker Compose |
-| **Hosting (Target)** | AWS Amplify (Frontend), AWS EC2 (Backend), Amazon RDS (Database), Amazon S3 (Media) |
+```text
+                Internet
+                    │
+                    ▼
+           AWS EC2 (Ubuntu)
+                    │
+      ┌─────────────┴─────────────┐
+      │                           │
+ React Frontend             FastAPI Backend
+      │                           │
+      └─────────────┬─────────────┘
+                    │
+                    ▼
+          Amazon RDS PostgreSQL
+```
 
 ---
 
-## 📂 Project Directory Structure
+# 🤖 Machine Learning
+
+### Model
+
+- EfficientNetB0 (Transfer Learning)
+
+### Dataset
+
+PlantVillage Dataset
+
+### Dataset Statistics
+
+- Training Images: **37,997**
+- Validation Images: **10,859**
+- Total Images: **48,856+**
+- Disease Classes: **38**
+
+### Performance
+
+| Metric | Value |
+|---------|------:|
+| Validation Accuracy | **98.74%** |
+
+The model predicts:
+
+- Disease Name
+- Scientific Name
+- Confidence Score
+- Plant Health Status
+- Disease Description
+- Symptoms
+- Treatment
+- Prevention
+
+---
+
+# 🛠 Tech Stack
+
+| Layer | Technologies |
+|-------|--------------|
+| Frontend | React, Vite, Tailwind CSS, React Router, Axios, Recharts |
+| Backend | FastAPI, SQLAlchemy, Alembic, Pydantic, JWT OAuth2, Passlib |
+| Machine Learning | TensorFlow, EfficientNetB0, OpenCV, NumPy, Scikit-learn |
+| Database | PostgreSQL, Amazon RDS |
+| Cloud | AWS EC2, Amazon RDS |
+| DevOps | Docker, Docker Compose, Nginx |
+| API Docs | Swagger / OpenAPI |
+
+---
+
+# 📁 Project Structure
 
 ```text
 LeafSense-AI/
-├── frontend/                 # React frontend application
-├── backend/                  # FastAPI backend server
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── Dockerfile
+│
+├── backend/
 │   ├── app/
-│   │   ├── api/              # Route controllers/endpoints
-│   │   ├── auth/             # Authentication & JWT services
-│   │   ├── core/             # Configuration & security setups
-│   │   ├── database/         # Database sessions and connection sessions
-│   │   ├── models/           # SQLAlchemy database schemas
-│   │   ├── schemas/          # Pydantic schemas for request/response validation
-│   │   ├── services/         # Business logic layer (Repository pattern)
-│   │   ├── utils/            # Shared utility functions
-│   │   └── main.py           # Application entrypoint
-│   ├── requirements.txt      # Backend Python dependencies
-│   └── .env.example          # Backend configuration template
-├── ml/                       # Machine Learning codebase
-│   ├── dataset/              # PlantVillage images split (train, valid, test)
-│   ├── models/               # Saved checkpoints and models
-│   ├── saved_model/          # Serialized production models (.keras / .h5)
-│   ├── training/             # Custom model trainer scripts
-│   ├── train.py              # ML pipeline training script
-│   ├── predict.py            # Local model prediction script
-│   └── requirements.txt      # Machine Learning dependencies
+│   │   ├── api/
+│   │   ├── auth/
+│   │   ├── core/
+│   │   ├── database/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── main.py
+│   └── Dockerfile
+│
+├── ml/
+│   ├── dataset/
+│   ├── models/
+│   ├── saved_model/
+│   ├── train.py
+│   └── predict.py
+│
 ├── deployment/
-│   └── docker/
-│       ├── docker-compose.yml # PostgreSQL and pgAdmin orchestration
-│       └── .env.example      # Docker Compose configuration template
-├── docs/                     # Architectural diagrams, user manuals & guides
-└── README.md                 # Primary project documentation
+│   └── docker-compose.yml
+│
+├── docs/
+│
+└── README.md
 ```
 
 ---
 
-## 🚀 Step 1: Getting Started
+# 🔥 REST APIs
 
-### Prerequisites
-Make sure you have the following installed on your developer machine:
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (ensure it is running)
-- [Python 3.10+](https://www.python.org/downloads/)
-- [Node.js v18+](https://nodejs.org/)
+## Authentication
 
----
-
-### Database Setup
-
-1. Navigate to the docker deployment directory:
-   ```bash
-   cd deployment/docker
-   ```
-
-2. Copy the example environment file to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Start the Postgres database and pgAdmin containers:
-   ```bash
-   docker-compose up -d
-   ```
-
-4. Verify that the containers are healthy and running:
-   ```bash
-   docker-compose ps
-   ```
-
-5. Access local database administration:
-   - **pgAdmin Console**: [http://localhost:5050](http://localhost:5050)
-   - **Username**: `admin@leafsense.ai` (as configured in `deployment/docker/.env`)
-   - **Password**: `pgadmin_secure_pass_2026`
+| Method | Endpoint |
+|---------|----------|
+| POST | `/api/auth/register` |
+| POST | `/api/auth/login` |
 
 ---
 
-### Python Environments Setup
+## Predictions
 
-It is recommended to run virtual environments for separate services (Backend and ML pipeline) to avoid dependency version conflicts.
+| Method | Endpoint |
+|---------|----------|
+| POST | `/api/predictions/predict` |
+| GET | `/api/predictions/history` |
+| DELETE | `/api/predictions/history/{id}` |
 
-#### Backend Env Setup
+---
+
+## Dashboard
+
+| Method | Endpoint |
+|---------|----------|
+| GET | `/api/dashboard/stats` |
+
+---
+
+## Profile
+
+| Method | Endpoint |
+|---------|----------|
+| GET | `/api/profile` |
+| PUT | `/api/profile` |
+
+---
+
+# 🔐 Authentication
+
+LeafSense AI secures protected APIs using:
+
+- JWT Authentication
+- OAuth2 Password Flow
+- Bearer Tokens
+- Password Hashing using Passlib
+
+Protected endpoints include:
+
+- Predictions
+- Dashboard
+- Prediction History
+- User Profile
+
+---
+
+# 🐳 Local Deployment
+
+## Clone Repository
+
 ```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-cp .env.example .env
-```
-
-#### ML Env Setup
-```bash
-cd ml
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+git clone https://github.com/<your-username>/LeafSense-AI.git
+cd LeafSense-AI
 ```
 
 ---
 
-## 🗺️ Project Roadmap
+## Start Containers
 
-- [x] **STEP 1: Project Setup** - Directory layout, Python requirements, Docker Compose for Database & pgAdmin.
-- [ ] **STEP 2: Machine Learning** - Train EfficientNetB0 on PlantVillage dataset, validation curves, prediction script.
-- [ ] **STEP 3: Backend APIs** - FastAPI endpoints, Repository patterns, JWT authentication, prediction storage.
-- [ ] **STEP 4: Frontend UI** - React UI with Tailwind, dashboard metrics, interactive upload component, and charts.
-- [ ] **STEP 5: Dockerization** - Full multi-container Docker deployment (FastAPI, React, PostgreSQL).
-- [ ] **STEP 6: Quality Assurance** - Backend unit tests, frontend integrations, and validation testing.
-- [ ] **STEP 7: AWS Deployment** - Deploying to AWS Amplify, EC2, RDS PostgreSQL, and S3 buckets.
-- [ ] **STEP 8: Documentation & Showcase** - Final API documentation, architectural manuals, and deployment logs.
+```bash
+docker compose up --build -d
+```
+
+---
+
+## View Running Containers
+
+```bash
+docker compose ps
+```
+
+---
+
+## Backend
+
+```
+http://localhost:8000
+```
+
+Swagger Documentation
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+## Frontend
+
+```
+http://localhost
+```
+
+---
+
+# ☁️ Production Deployment
+
+The application is deployed on AWS using:
+
+- **AWS EC2 (Ubuntu)** for hosting Dockerized React and FastAPI services
+- **Amazon RDS PostgreSQL** as the managed cloud database
+- **Docker Compose** for container orchestration
+- **Nginx** for serving the React frontend
+- **Swagger/OpenAPI** for API documentation
+
+---
+
+# 📊 Dashboard Analytics
+
+The analytics dashboard provides:
+
+- Total Predictions
+- Healthy vs Diseased Plants
+- Confidence Distribution
+- Most Common Diseases
+- Recent Prediction History
+
+---
+
+# 🌱 Prediction Workflow
+
+```text
+User Uploads Leaf Image
+            │
+            ▼
+JWT Authentication
+            │
+            ▼
+FastAPI Backend
+            │
+            ▼
+EfficientNetB0 Model
+            │
+            ▼
+Disease Prediction
+            │
+            ▼
+Store Prediction in Amazon RDS
+            │
+            ▼
+Dashboard Analytics Updated
+            │
+            ▼
+Prediction Returned to Frontend
+```
+
+---
+
+# 📈 Project Highlights
+
+- ✅ Built an EfficientNetB0 Transfer Learning model
+- ✅ 98.74% Validation Accuracy
+- ✅ 38 Crop Disease Categories
+- ✅ 48,856+ Images Used for Training & Validation
+- ✅ JWT Authentication
+- ✅ RESTful FastAPI Backend
+- ✅ React Frontend
+- ✅ PostgreSQL Database
+- ✅ Amazon RDS Integration
+- ✅ AWS EC2 Deployment
+- ✅ Dockerized Full Stack Architecture
+- ✅ Prediction History Tracking
+- ✅ Dashboard Analytics
+- ✅ Swagger/OpenAPI Documentation
+
+---
+
+# 👨‍💻 Author
+
+**Mrinal**
+
+GitHub: https://github.com/Mrinal0044
+
+LinkedIn: *(Add your LinkedIn URL here)*
