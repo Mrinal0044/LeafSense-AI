@@ -344,11 +344,3 @@ Prediction Returned to Frontend
 - ✅ Swagger/OpenAPI Documentation
 
 ---
-
-# 👨‍💻 Author
-
-**Mrinal**
-
-GitHub: https://github.com/Mrinal0044
-
-LinkedIn: *(Add your LinkedIn URL here)*
